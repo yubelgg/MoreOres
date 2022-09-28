@@ -1,0 +1,6 @@
+name: MoreOres
+version: '${project.version}'
+main: moreores.moreores.MoreOres
+api-version: 1.19
+authors: [ Yubel ]
+description: Place an ore block, then it multiples
