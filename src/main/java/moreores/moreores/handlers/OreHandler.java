@@ -33,6 +33,7 @@ public class OreHandler implements Listener {
         }
         Bukkit.getLogger().info("Block Placed");
     }
+    //this a test
 
     @EventHandler
     public void OnOreBreak(BlockBreakEvent event) {
