@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MoreOres extends JavaPlugin {
-    //test test
+
     @Override
     public void onEnable() {
         // Plugin startup logic
