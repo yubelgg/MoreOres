@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import java.util.HashSet;
 
 public class OreHandler implements Listener {
     public OreHandler(MoreOres plugins) {
@@ -17,82 +18,86 @@ public class OreHandler implements Listener {
 
     @EventHandler
     public void OnOrePlaced(BlockPlaceEvent event) {
+        HashSet<Material> ores = new HashSet<>();
+        ores.add(Material.COAL_ORE);
+        ores.add(Material.DEEPSLATE_COAL_ORE);
+        ores.add(Material.IRON_ORE);
+        ores.add(Material.DEEPSLATE_IRON_ORE);
+        ores.add(Material.COPPER_ORE);
+        ores.add(Material.DEEPSLATE_COPPER_ORE);
+        ores.add(Material.GOLD_ORE);
+        ores.add(Material.DEEPSLATE_GOLD_ORE);
+        ores.add(Material.REDSTONE_ORE);
+        ores.add(Material.DEEPSLATE_REDSTONE_ORE);
+        ores.add(Material.EMERALD_ORE);
+        ores.add(Material.DEEPSLATE_EMERALD_ORE);
+        ores.add(Material.LAPIS_ORE);
+        ores.add(Material.DEEPSLATE_LAPIS_ORE);
+        ores.add(Material.DIAMOND_ORE);
+        ores.add(Material.DEEPSLATE_DIAMOND_ORE);
+        ores.add(Material.NETHER_GOLD_ORE);
+        ores.add(Material.NETHER_QUARTZ_ORE);
+
         Block block = event.getBlock();
-        if(block.getType() == Material.DIAMOND_ORE) {
-            Location blockLoc = block.getLocation().add(3,0,3);
-            blockLoc.getBlock().setType(Material.DIAMOND_ORE);
 
-            Location blockLoc2 = block.getLocation().add(3,0,-3);
-            blockLoc2.getBlock().setType(Material.DIAMOND_ORE);
+        if(ores.contains(block.getType())) {
+            Location blockLoc = block.getLocation().add(3, 0, 3);
+            blockLoc.getBlock().setType(block.getType());
 
-            Location blockLoc3 = block.getLocation().add(-3,0,3);
-            blockLoc3.getBlock().setType(Material.DIAMOND_ORE);
+            Location blockLoc2 = block.getLocation().add(3, 0, -3);
+            blockLoc2.getBlock().setType(block.getType());
 
-            Location blockLoc4 = block.getLocation().add(-3,0,-3);
-            blockLoc4.getBlock().setType(Material.DIAMOND_ORE);
+            Location blockLoc3 = block.getLocation().add(-3, 0, 3);
+            blockLoc3.getBlock().setType(block.getType());
+
+            Location blockLoc4 = block.getLocation().add(-3, 0, -3);
+            blockLoc4.getBlock().setType(block.getType());
         }
-        if(block.getType() == Material.GOLD_ORE) {
-            Location blockLoc = block.getLocation().add(3,0,3);
-            blockLoc.getBlock().setType(Material.GOLD_ORE);
-
-            Location blockLoc2 = block.getLocation().add(3,0,-3);
-            blockLoc2.getBlock().setType(Material.GOLD_ORE);
-
-            Location blockLoc3 = block.getLocation().add(-3,0,3);
-            blockLoc3.getBlock().setType(Material.GOLD_ORE);
-
-            Location blockLoc4 = block.getLocation().add(-3,0,-3);
-            blockLoc4.getBlock().setType(Material.GOLD_ORE);
-        }
-        Bukkit.getLogger().info("Block Placed");
     }
 
     @EventHandler
     public void OnOreBreak(BlockBreakEvent event) {
+        HashSet<Material> ores = new HashSet<>();
+        ores.add(Material.COAL_ORE);
+        ores.add(Material.DEEPSLATE_COAL_ORE);
+        ores.add(Material.IRON_ORE);
+        ores.add(Material.DEEPSLATE_IRON_ORE);
+        ores.add(Material.COPPER_ORE);
+        ores.add(Material.DEEPSLATE_COPPER_ORE);
+        ores.add(Material.GOLD_ORE);
+        ores.add(Material.DEEPSLATE_GOLD_ORE);
+        ores.add(Material.REDSTONE_ORE);
+        ores.add(Material.DEEPSLATE_REDSTONE_ORE);
+        ores.add(Material.EMERALD_ORE);
+        ores.add(Material.DEEPSLATE_EMERALD_ORE);
+        ores.add(Material.LAPIS_ORE);
+        ores.add(Material.DEEPSLATE_LAPIS_ORE);
+        ores.add(Material.DIAMOND_ORE);
+        ores.add(Material.DEEPSLATE_DIAMOND_ORE);
+        ores.add(Material.NETHER_GOLD_ORE);
+        ores.add(Material.NETHER_QUARTZ_ORE);
+
         Block block = event.getBlock();
-        if(block.getType() == Material.DIAMOND_ORE) {
+        if(ores.contains(block.getType())) {
             Location blockLoc = block.getLocation().add(3,0,3);
-            if(blockLoc.getBlock().getType().equals(Material.DIAMOND_ORE)) {
+            if(blockLoc.getBlock().getType().equals(block.getType())) {
                 blockLoc.getBlock().setType(Material.AIR);
             }
 
             Location blockLoc2 = block.getLocation().add(3,0,-3);
-            if(blockLoc2.getBlock().getType().equals(Material.DIAMOND_ORE)) {
+            if(blockLoc2.getBlock().getType().equals(block.getType())) {
                 blockLoc2.getBlock().setType(Material.AIR);
             }
 
             Location blockLoc3 = block.getLocation().add(-3,0,3);
-            if(blockLoc3.getBlock().getType().equals(Material.DIAMOND_ORE)) {
+            if(blockLoc3.getBlock().getType().equals(block.getType())) {
                 blockLoc3.getBlock().setType(Material.AIR);
             }
 
             Location blockLoc4 = block.getLocation().add(-3,0,-3);
-            if(blockLoc4.getBlock().getType().equals(Material.DIAMOND_ORE)) {
+            if(blockLoc4.getBlock().getType().equals(block.getType())) {
                 blockLoc4.getBlock().setType(Material.AIR);
             }
         }
-
-        if(block.getType() == Material.GOLD_ORE) {
-            Location blockLoc = block.getLocation().add(3,0,3);
-            if(blockLoc.getBlock().getType().equals(Material.GOLD_ORE)) {
-                blockLoc.getBlock().setType(Material.AIR);
-            }
-
-            Location blockLoc2 = block.getLocation().add(3,0,-3);
-            if(blockLoc2.getBlock().getType().equals(Material.GOLD_ORE)) {
-                blockLoc2.getBlock().setType(Material.AIR);
-            }
-
-            Location blockLoc3 = block.getLocation().add(-3,0,3);
-            if(blockLoc3.getBlock().getType().equals(Material.GOLD_ORE)) {
-                blockLoc3.getBlock().setType(Material.AIR);
-            }
-
-            Location blockLoc4 = block.getLocation().add(-3,0,-3);
-            if(blockLoc4.getBlock().getType().equals(Material.GOLD_ORE)) {
-                blockLoc4.getBlock().setType(Material.AIR);
-            }
-        }
-        Bukkit.getLogger().info("Block Broke");
     }
 }
